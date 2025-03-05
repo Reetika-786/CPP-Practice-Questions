@@ -1,1 +1,21 @@
 
+class Solution {
+public:
+    vector<int> findUnion(vector<int>& a, vector<int>& b) {
+        map<int, bool> mp;  // Using ordered map to maintain sorted order
+
+        for (int i : a) {
+            mp[i] = true; // Inserts into ordered map, automatically sorted
+        }
+        for (int i : b) {
+            mp[i] = true;
+        }
+
+        vector<int> ans;
+        for (auto ele : mp) {
+            ans.push_back(ele.first);  // Directly retrieves sorted unique elements
+        }
+
+        return ans;
+    }
+};
